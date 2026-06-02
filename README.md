@@ -18,6 +18,18 @@ A modular script built to handle complex data parsing and extraction workflows f
 * **Core Focus:** Native proxy rotation structures, graceful rate-limit handling, and checkpoint-saving logic to prevent data loss if the network drops.
 * **Architecture:** Divided into isolated modules (Fetcher, Parser, Storage) ensuring high maintainability.
 
+#### 🖥️ Execution Log Example:
+```text
+[2026-06-02 21:53:23] [INFO] Initializing asynchronous data extraction pipeline...
+[2026-06-02 21:53:23] [INFO] Configuration successfully verified.
+[2026-06-02 21:53:23] [INFO] Dispatched 4 concurrent API tasks. Executing...
+[2026-06-02 21:53:23] [INFO] === Processed Data Pipeline Results ===
+[2026-06-02 21:53:23] [INFO] Asset: BTCUSDT    | Current Market Price: 67237.01000000
+[2026-06-02 21:53:23] [INFO] Asset: ETHUSDT    | Current Market Price: 1908.50000000
+[2026-06-02 21:53:23] [INFO] Asset: SOLUSDT    | Current Market Price: 76.10000000
+[2026-06-02 21:53:23] [INFO] Asset: LINKUSDT   | Current Market Price: 8.53200000
+[2026-06-02 21:53:23] [INFO] Pipeline finished. Successfully processed 4/4 metrics.
+
 ### 3. Protected Telegram Daemon & Control Interface (PM2)
 A backend script acting as a lightweight, secure control panel for managing remote automation tasks via a Telegram interface.
 * **Core Focus:** Strict user authorization using encrypted identifier filtering, defensive input validation, and deployment structures optimized for long-term stability.
