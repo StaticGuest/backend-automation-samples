@@ -29,7 +29,7 @@ A modular script built to handle complex data parsing and extraction workflows f
 [2026-06-02 21:53:23] [INFO] Asset: SOLUSDT    | Current Market Price: 76.10000000
 [2026-06-02 21:53:23] [INFO] Asset: LINKUSDT   | Current Market Price: 8.53200000
 [2026-06-02 21:53:23] [INFO] Pipeline finished. Successfully processed 4/4 metrics.
-```text
+text```
 
 ### 3. Protected Telegram Daemon & Control Interface (PM2)
 A backend script acting as a lightweight, secure control panel for managing remote automation tasks via a Telegram interface.
