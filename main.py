@@ -16,9 +16,9 @@ logger = logging.getLogger("DataPipeline")
 CONFIG = {
     "BASE_URL": "https://api.binance.com/api/v3/ticker/price",
     "TARGET_SYMBOLS": ["BTCUSDT", "ETHUSDT", "SOLUSDT", "LINKUSDT"],
-    "REQUEST_TIMEOUT": 10,  # таймаут відповіді в секундах
-    "MAX_RETRIES": 3,       # кількість спроб при збої мережі
-    "RETRY_DELAY": 2,       # затримка між спробами у секундах
+    "REQUEST_TIMEOUT": 10, 
+    "MAX_RETRIES": 3,      
+    "RETRY_DELAY": 2,      
 }
 
 async def fetch_symbol_price(session: aiohttp.ClientSession, symbol: str) -> Optional[Dict[str, str]]:
