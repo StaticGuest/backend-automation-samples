@@ -24,12 +24,11 @@ A modular script built to handle complex data parsing and extraction workflows f
 [2026-06-02 21:53:23] [INFO] Configuration successfully verified.
 [2026-06-02 21:53:23] [INFO] Dispatched 4 concurrent API tasks. Executing...
 [2026-06-02 21:53:23] [INFO] === Processed Data Pipeline Results ===
-[2026-06-02 21:53:23] [INFO] Asset: BTCUSDT    | Current Market Price: 67237.01000000
-[2026-06-02 21:53:23] [INFO] Asset: ETHUSDT    | Current Market Price: 1908.50000000
-[2026-06-02 21:53:23] [INFO] Asset: SOLUSDT    | Current Market Price: 76.10000000
-[2026-06-02 21:53:23] [INFO] Asset: LINKUSDT   | Current Market Price: 8.53200000
+[2026-06-02 21:53:23] [INFO] Asset: BTCUSDT     | Current Market Price: 67237.01000000
+[2026-06-02 21:53:23] [INFO] Asset: ETHUSDT     | Current Market Price: 1908.50000000
+[2026-06-02 21:53:23] [INFO] Asset: SOLUSDT     | Current Market Price: 76.10000000
+[2026-06-02 21:53:23] [INFO] Asset: LINKUSDT    | Current Market Price: 8.53200000
 [2026-06-02 21:53:23] [INFO] Pipeline finished. Successfully processed 4/4 metrics.
-text```
 
 ### 3. Protected Telegram Daemon & Control Interface (PM2)
 A backend script acting as a lightweight, secure control panel for managing remote automation tasks via a Telegram interface.
