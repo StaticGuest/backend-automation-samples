@@ -5,7 +5,6 @@ import sys
 from typing import Dict, List, Optional
 import aiohttp
 
-# Налаштування структурованого логування (як у реальному продакшені)
 logging.basicConfig(
     level=logging.INFO,
     format="[%(asctime)s] [%(levelname)s] %(message)s",
@@ -14,7 +13,6 @@ logging.basicConfig(
 )
 logger = logging.getLogger("DataPipeline")
 
-# Конфігураційний шар (уникаємо "magic numbers" у коді)
 CONFIG = {
     "BASE_URL": "https://api.binance.com/api/v3/ticker/price",
     "TARGET_SYMBOLS": ["BTCUSDT", "ETHUSDT", "SOLUSDT", "LINKUSDT"],
@@ -24,10 +22,6 @@ CONFIG = {
 }
 
 async def fetch_symbol_price(session: aiohttp.ClientSession, symbol: str) -> Optional[Dict[str, str]]:
-    """
-    Виконує асинхронний запит до API з вбудованою логікою повторних спроб
-    та обробкою мережевих виключень.
-    """
     url = CONFIG["BASE_URL"]
     params = {"symbol": symbol}
 
@@ -52,7 +46,6 @@ async def fetch_symbol_price(session: aiohttp.ClientSession, symbol: str) -> Opt
         except Exception as e:
             logger.error(f"Unexpected error fetching {symbol}: {str(e)}. Attempt {attempt}/{CONFIG['MAX_RETRIES']}.")
 
-        # Якщо спроба не остання, робимо паузу перед наступним запитом
         if attempt < CONFIG["MAX_RETRIES"]:
             await asyncio.sleep(CONFIG["RETRY_DELAY"])
 
@@ -62,14 +55,12 @@ async def main():
     logger.info("Initializing asynchronous data extraction pipeline...")
     logger.info("Configuration successfully verified.")
 
-    # Створюємо єдину сесію для ефективного перевикористання TCP-з'єднань
     async with aiohttp.ClientSession() as session:
         tasks = [fetch_symbol_price(session, symbol) for symbol in CONFIG["TARGET_SYMBOLS"]]
         
         logger.info(f"Dispatched {len(tasks)} concurrent API tasks. Executing...")
         results = await asyncio.gather(*tasks)
 
-        # Відсікаємо порожні результати, якщо якісь запити повністю впали
         cleaned_data = [res for res in results if res is not None]
 
         logger.info("=== Processed Data Pipeline Results ===")
@@ -80,7 +71,6 @@ async def main():
 
 if __name__ == "__main__":
     try:
-        # Сучасний Python 3.8+ (і тим паче 3.14) сам ініціалізує правильний Event Loop на Windows
         asyncio.run(main())
     except KeyboardInterrupt:
         logger.info("Pipeline execution gracefully stopped by user via KeyboardInterrupt.")
