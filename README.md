@@ -37,10 +37,4 @@ A backend script acting as a lightweight, secure control panel for managing remo
 
 * **No Magic Numbers:** All configurations, request limits, and timing intervals are clearly defined in a central configuration layer.
 * **Fail-Safe Mindset:** Code is written with the assumption that external APIs and third-party servers will occasionally fail. Fallback mechanics and informative logging are always present.
-* **Clean Separation of Concerns:** Database interactions, external API layers, and core business logic are strictly separated into dedicated directories rather than piled into a single monolithic script.
-
-```
-
-Тепер зберігай — усе розіб'ється на правильні блоки, і симетрія відновиться.
-
-```
+* **Clean Separation of Concerns:** Database interactions, external API layers, and core business logic are strictly separated into dedicated directories rather than piled into a single monolithic script
