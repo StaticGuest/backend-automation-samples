@@ -23,6 +23,8 @@ A modular script built to handle complex data parsing and extraction workflows f
 [2026-06-02 21:53:23] [INFO] Pipeline finished. Successfully processed 4/4 metrics.
 
 ```
+<img width="532" height="625" alt="Знімок екрана 2026-06-02 222720" src="https://github.com/user-attachments/assets/c1d1640a-3bd9-4214-97b7-9dfd9113b484" />
+
 
 ### 3. Protected Telegram Daemon & Control Interface (PM2)
 
